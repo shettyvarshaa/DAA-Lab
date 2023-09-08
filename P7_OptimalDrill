@@ -1,0 +1,31 @@
+import itertools
+
+def cal_distance(X1, Y1, X2, Y2):
+    return ((X1 - X2) ** 2 + (Y1 - Y2) ** 2) ** 0.5
+
+def optimal(points, time):
+    num = len(points)
+    distance = [[0] * num for _ in range(num)]
+
+    for i in range(num):
+        X1, Y1, d1 = points[i]
+        for j in range(num):
+            X2, Y2, d2 = points[j]
+            distance[i][j] = cal_distance(X1, Y1, X2, Y2)
+
+    point_permu = itertools.permutations(range(num), num)
+    optimal_drilling = float('inf')
+
+    for permutation in point_permu:
+        total_dist = 0
+        for i in range(num - 1):
+            total_dist += distance[permutation[i]][permutation[i + 1]]
+        drilling_time = total_dist + (num - 1) * time
+        optimal_drilling = min(optimal_drilling, drilling_time)
+
+    return optimal_drilling
+
+points = [(0, 0, 1), (3, 0, 2), (0, 4, 1), (3, 4, 2)]
+time = 5
+opt = optimal(points, time)
+print(opt)
