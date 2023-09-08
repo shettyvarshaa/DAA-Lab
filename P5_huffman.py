@@ -1,10 +1,5 @@
-
-
-
-
 import heapq
 from collections import Counter
-
 class Node:
     def __init__(self, freq, symbol, left=None, right=None):
         self.freq = freq
@@ -48,8 +43,6 @@ printNodes(nodes[0])
     h -> 10
     r -> 11
 '''
-
-
 
 #OR
 
