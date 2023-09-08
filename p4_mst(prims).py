@@ -16,7 +16,6 @@ def prims(adj_mat):
     for v in range(1, num):
         mst.append((parent[v], v, adj_mat[v][parent[v]]))
     return mst
-
 adj_mat = [
     [0, 2, 0, 6, 0],
     [2, 0, 3, 8, 5],
