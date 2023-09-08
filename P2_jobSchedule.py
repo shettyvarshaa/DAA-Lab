@@ -1,16 +1,27 @@
-def knapSack(W, wt, val, n): 
-    if n == 0 or W == 0: 
-        return 0     
-    if wt[n - 1] > W: 
-        return knapSack(W, wt, val, n - 1)     
-    return max(val[n - 1] + knapSack(W - wt[n - 1], wt, val, n - 1), knapSack(W, wt, val, n - 1)) 
-
-profit = [60, 100, 120] 
-weight = [10, 20, 30] 
-print(f"Profit = {profit}")
-print(f"Weight = {weight}")
-
-n = len(profit) 
-W = 10 
-print(f"Knapsack Capacity = {W}")
-print("Maximum Profit =",knapSack(W, weight, profit, n)) 
+class Job:
+    def __init__(self, taskId, deadline, profit):
+        self.taskId = taskId
+        self.deadline = deadline
+        self.profit = profit
+def scheduleJobs(jobs, T):
+    profit = 0
+    slot = [-1] * T
+    jobs.sort(key=lambda x: x.profit, reverse=True)
+    for job in jobs:
+        for j in reversed(range(job.deadline)):
+            if j < T and slot[j] == -1:
+                slot[j] = job.taskId
+                profit += job.profit
+                break
+    print('The scheduled jobs are:', list(filter(lambda x: x != -1, slot)))
+    print('The total profit earned is:', profit)
+if __name__ == '__main__':
+    jobs = []
+    n = int(input('Enter the number of jobs: '))
+    for i in range(n):
+        taskId = int(input(f'Enter the task ID for job {i+1}: '))
+        deadline = int(input(f'Enter the deadline for job {i+1}: '))
+        profit = int(input(f'Enter the profit for job {i+1}: '))
+        jobs.append(Job(taskId, deadline, profit))
+    T = int(input('Enter the deadline limit: '))
+    scheduleJobs(jobs, T)
