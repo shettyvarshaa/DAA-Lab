@@ -20,3 +20,9 @@ hole_diameters = [4, 3, 2, 6]
 # Calculate optimal drilling time
 time = optimal_drilling_time(hole_diameters)
 print(f"Optimal Drilling Time: {time}")
+
+#OUTPUT
+
+'''
+    Optimal Drilling Time: 29
+'''

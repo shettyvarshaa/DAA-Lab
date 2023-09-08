@@ -25,3 +25,9 @@ graph = [
 optimal_route, total_cost = tsp(graph)
 print("Optimal Route:", optimal_route)
 print("Total Cost:", total_cost)
+
+#OUTPUT
+'''
+    Optimal Route: (0, 1, 2, 3)
+    Total Cost: 53
+'''

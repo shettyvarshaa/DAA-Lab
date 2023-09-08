@@ -14,3 +14,11 @@ n = len(profit)
 W = 50 
 print(f"Knapsack Capacity = {W}")
 print("Maximum Profit =",knapSack(W, weight, profit, n)) 	 
+
+#OUTPUT
+'''
+    Profit =  [130, 100, 120]
+    Weight = [10, 20, 30]
+    Knapsack Capacity = 50
+    Maximum Profit = 250
+'''

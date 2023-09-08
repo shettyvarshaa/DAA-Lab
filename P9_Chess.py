@@ -25,3 +25,18 @@ if __name__ == '__main__':
     N = int(input())
     mat = [['-' for _ in range(N)] for _ in range(N)]
     nQueen(mat, 0)
+
+#OUTPUT
+'''
+    Enter the number of queens
+    4
+    -Q--
+    ---Q
+    Q---
+    --Q-
+
+    --Q-
+    Q---
+    ---Q
+    -Q--
+'''

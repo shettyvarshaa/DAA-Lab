@@ -40,6 +40,14 @@ while len(nodes) > 1:
 
 printNodes(nodes[0])
 
+#OUTPUT
+'''
+    Enter the string: harry
+    y -> 00
+    a -> 01
+    h -> 10
+    r -> 11
+'''
 
 
 

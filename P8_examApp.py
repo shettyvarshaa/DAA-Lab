@@ -18,3 +18,9 @@ subjects = ['maths', 'phy', 'chem', 'bio']
 connections = [('maths', 'phy'), ('maths', 'chem'), ('maths', 'bio'), ('phy', 'chem'),('phy','bio')]
 color_map, color_val = exam_schedule(subjects, connections)
 print(color_map)
+
+#OUTPUT
+
+''' 
+    {'maths': 1, 'phy': 2, 'chem': 3, 'bio': 3}
+'''

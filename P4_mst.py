@@ -26,3 +26,8 @@ adj_mat = [
 mst_set = [False] * len(adj_mat)
 mst = prims(adj_mat)
 print(mst)
+
+#OUTPUT
+'''
+    [(0, 1, 2), (1, 2, 3), (0, 3, 6), (1, 4, 5)]
+'''
